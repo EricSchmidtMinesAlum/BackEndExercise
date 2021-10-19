@@ -8,6 +8,6 @@ public class LibraryController {
 
     @GetMapping("/health")
     public void health() {
-
+        return 101;
     }
 }
