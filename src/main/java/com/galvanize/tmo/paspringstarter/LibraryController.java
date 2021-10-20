@@ -40,9 +40,10 @@ public class LibraryController {
         return repository.findAll();
         }
 
-    @PostMapping(value="/api/books",consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value="/api/books",consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
         Books newBooks(@RequestBody Books newBooks) {
-        return repository.save(newBooks);
+        repository.save(newBooks);
+        return newBooks;
     }
     
 } 
