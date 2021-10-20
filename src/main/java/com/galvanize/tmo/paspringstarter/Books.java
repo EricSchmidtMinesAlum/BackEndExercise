@@ -14,9 +14,9 @@ public class Books {
 
     private String author;
     private String title;
-    private int yearPublished;
+    private String yearPublished;
 
-    public Books(String givenAuthor,String givenTitle,int givenYearPublished){
+    public Books(String givenAuthor,String givenTitle,String givenYearPublished){
         this.author=givenAuthor;
         this.title=givenTitle;
         this.yearPublished=givenYearPublished;
