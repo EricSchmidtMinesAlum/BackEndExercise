@@ -23,13 +23,17 @@ public class Books {
     private int yearPublished;
 
     Books(){};
-    Books(String givenAuthor,String givenTitle, int givenYearPublished){
-        this.author=givenAuthor;
-        this.title=givenTitle;
-        this.yearPublished=givenYearPublished;
+    Books(String author,String title, int yearPublished){
+        this.author=author;
+        this.title=title;
+        this.yearPublished=yearPublished;
     }
 
     //temp settters adn getters below
+    public Long getId() {
+        return this.id;
+      }
+    
     public void setTitle(String newTitle){
         this.title=newTitle;
     }
