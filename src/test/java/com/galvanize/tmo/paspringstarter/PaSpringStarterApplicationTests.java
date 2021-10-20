@@ -15,7 +15,7 @@ class PaSpringStarterApplicationTests {
 
 	@Autowired
 	MockMvc mockMvc;
-/*
+
 	@Test
 	void contextLoads() {
 	}
@@ -24,5 +24,5 @@ class PaSpringStarterApplicationTests {
 	void isHealthy() throws Exception {
 		mockMvc.perform(get("/health"))
 				.andExpect(status().isOk());
-	}*/
+	}
 }

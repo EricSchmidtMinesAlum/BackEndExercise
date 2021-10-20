@@ -35,12 +35,15 @@ public class Books {
     public void setTitle(String newTitle){
         this.title=newTitle;
     }
+    public String getTitle(){
+        return this.title;
+    }
 
 
     @Override
     public String toString() {
     return "{" + "id=" + this.id + ", author='" + this.author + ", title='" + this.title +", yearPublished='" + this.yearPublished +'}';
-  }
+    }
 
     // over ride sort to sort by title    
 }
