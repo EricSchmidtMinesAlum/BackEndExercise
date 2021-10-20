@@ -4,38 +4,45 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+
 import Books.java;
 @RestController
 public class LibraryController {
 
-    @Autowired
-    UserService userService;
+    private final BooksRepository repository;
+
+    LibraryController(BooksRepository repository) {
+    this.repository = repository;
+    }
+
 
     @GetMapping("/health")
     public void health() {
     
     }
+
+    @GetMapping("/api/books")
+        List<Books> all() {
+        return repository.findAll();
+        }
+
+    @PostMapping("/employees")
+        Books newBooks(@RequestBody Books newBooks) {
+        return repository.save(newBooks);
+    }
     
+    
+
+
     @RequestMapping("/api/books")
 	public @ResponseBody String greeting() {
 		return "Hello, World";
 	}
 
-    //POST a new book
-    @PostMapping(path = "/api/books", 
-        consumes = MediaType.APPLICATION_JSON_VALUE, 
-        produces = MediaType.APPLICATION_JSON_VALUE)
-        public ResponseEntity<Books> create(@RequestBody Books newbook) {
-            Books book = userService.save(newbook);
-            if (book == null) {
-                throw new ServerException();
-            } else {
-                return new ResponseEntity<>(book, HttpStatus.CREATED);
-            }
-        }
+    
 } 
 
 
-
-
-}

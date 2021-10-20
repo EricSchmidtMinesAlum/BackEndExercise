@@ -37,6 +37,7 @@ class PaSpringStarterApplicationTests {
 		mockMvc.perform(get("/health"))
 				.andExpect(status().isOk());
 	}
+	
 /*
 	@Test
 		public void greetingShouldReturnDefaultMessage() throws Exception {
