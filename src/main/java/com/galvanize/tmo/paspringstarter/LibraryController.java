@@ -48,7 +48,7 @@ public class LibraryController {
     }
     */
     
-    @PostMapping(value="/api/books",consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value="/api/books")
         Books newBooks(@RequestBody Books newBooks) {
         return repository.save(newBooks);
     }
