@@ -15,7 +15,7 @@ import javax.persistence.Id;
 //yearpublished
 
 @Entity
-public class Books {=
+public class Books {
     //can't delete individual books, so no need to keep track of vacant ids
     private @Id @GeneratedValue Long id;
     private String author;
@@ -58,7 +58,7 @@ public class Books {=
 
     @Override
     public String toString() {
-    return "{" + "id=" + this.id + ", author='" + this.author + ", title='" + this.title +", yearPublished='" + this.yearPublished +'}';
+    return "{" + "id=" + this.id + ", author='" + this.author + ", title='" + this.title +", yearPublished='" + this.yearublished +'}';
     }
 
     @Override
@@ -70,11 +70,11 @@ public class Books {=
         return false;
         Books employee = (Books) o;
       return Objects.equals(this.id, employee.id) && Objects.equals(this.author, employee.author)
-          && Objects.equals(this.title, employee.title)&& Objects.equals(this.yearPublished, employee.yearPublished);
+          && Objects.equals(this.title, employee.title)&& Objects.equals(this.yearublished, employee.yearublished);
     }
   
     @Override
     public int hashCode() {
-      return Objects.hash(this.id, this.author, this.title,this.yearPublished);
+      return Objects.hash(this.id, this.author, this.title,this.yearublished);
     }
 }
