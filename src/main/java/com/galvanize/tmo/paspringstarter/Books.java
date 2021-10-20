@@ -57,5 +57,20 @@ public class Books {
     return "{" + "id=" + this.id + ", author='" + this.author + ", title='" + this.title +", yearPublished='" + this.yearPublished +'}';
     }
 
-    // over ride sort to sort by title    
+    @Override
+    public boolean equals(Object o) {
+  
+      if (this == o)
+        return true;
+      if (!(o instanceof Books))
+        return false;
+        Books employee = (Books) o;
+      return Objects.equals(this.id, employee.id) && Objects.equals(this.author, employee.author)
+          && Objects.equals(this.title, employee.title)&& Objects.equals(this.yearPublished, employee.yearPublished);
+    }
+  
+    @Override
+    public int hashCode() {
+      return Objects.hash(this.id, this.author, this.title,this.yearPublished);
+    }
 }
