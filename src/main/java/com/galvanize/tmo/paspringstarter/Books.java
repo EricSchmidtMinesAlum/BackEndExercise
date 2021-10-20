@@ -15,18 +15,18 @@ import javax.persistence.Id;
 //yearpublished
 
 @Entity
-public class Books {
+public class Books {=
     //can't delete individual books, so no need to keep track of vacant ids
     private @Id @GeneratedValue Long id;
     private String author;
     private String title;
-    private Integer yearPublished;
+    private Integer yearublished;
 
     Books(){};
-    Books(String author,String title, Integer yearPublished){
+    Books(String author,String title, Integer yearublished){
         this.author=author;
         this.title=title;
-        this.yearPublished=yearPublished;
+        this.yearublished=yearublished;
     }
 
     //temp settters adn getters below
@@ -47,10 +47,10 @@ public class Books {
         return this.author;
     }
     public void setYear(Integer newYear){
-        this.yearPublished=newYear;
+        this.yearublished=newYear;
     }
     public Integer getYear(){
-        return this.yearPublished;
+        return this.yearublished;
     }
 
 
