@@ -40,19 +40,23 @@ public class LibraryController {
         List<Books> all() {
         return repository.findAll();
         }
-    
+    /*
     @RequestMapping(value="/api/books", method = RequestMethod.POST)
     Books newBooks(@RequestBody Books newBooks) {
         repository.save(newBooks);
         return newBooks;
     }
+    */
     
-    /*
     @PostMapping(value="/api/books",consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
         Books newBooks(@RequestBody Books newBooks) {
-        repository.save(newBooks);
-        return newBooks;
-    }*/
+        return repository.save(newBooks);
+    }
+
+    @DeleteMapping("/api/books")
+    void deletall() {
+    repository.deleteAll();
+  }
     
 } 
 
