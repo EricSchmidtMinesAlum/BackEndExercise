@@ -8,6 +8,9 @@ import Books;
 @RestController
 public class LibraryController {
 
+    @Autowired
+    UserService userService;
+
     @GetMapping("/health")
     public void health() {
     
