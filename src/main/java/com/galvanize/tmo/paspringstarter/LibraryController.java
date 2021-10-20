@@ -29,18 +29,12 @@ public class LibraryController {
         return repository.findAll();
         }
 
-    @PostMapping("/employees")
+    @PostMapping("/api/books")
         Books newBooks(@RequestBody Books newBooks) {
         return repository.save(newBooks);
     }
-    
-    
 
-
-    @RequestMapping("/api/books")
-	public @ResponseBody String greeting() {
-		return "Hello, World";
-	}
+    
 
     
 } 
