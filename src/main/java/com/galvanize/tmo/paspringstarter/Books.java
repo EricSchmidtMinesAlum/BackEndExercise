@@ -17,7 +17,7 @@ import javax.persistence.Id;
 @Entity
 public class Books {
     //can't delete individual books, so no need to keep track of vacant ids
-    private @Id @GeneratedValue int id;
+    private @Id @GeneratedValue Long id;
 
 
     private String author;
