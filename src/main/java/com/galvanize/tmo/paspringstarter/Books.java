@@ -20,10 +20,10 @@ public class Books {
     private @Id @GeneratedValue Long id;
     private String author;
     private String title;
-    private String yearPublished;
+    private int yearPublished;
 
     Books(){};
-    Books(String author,String title, String yearPublished){
+    Books(String author,String title, int yearPublished){
         this.author=author;
         this.title=title;
         this.yearPublished=yearPublished;
@@ -46,10 +46,10 @@ public class Books {
     public String getAuthor(){
         return this.author;
     }
-    public void setYear(String newYear){
+    public void setYear(int newYear){
         this.yearPublished=newYear;
     }
-    public String getYear(){
+    public int getYear(){
         return this.yearPublished;
     }
 
@@ -58,7 +58,7 @@ public class Books {
 
     @Override
     public String toString() {
-    return "{" ;//; + "id=" + this.id + ", author='" + this.author + ", title='" + this.title +", yearPublished='" + this.yearPublished +'}';
+    return "{" + "id=" + this.id + ", author='" + this.author + ", title='" + this.title +", yearPublished='" + this.yearPublished +'}';
     }
 
     @Override
