@@ -20,10 +20,10 @@ public class Books {
     private @Id @GeneratedValue Long id;
     private String author;
     private String title;
-    private int yearPublished;
+    private String yearPublished;
 
     Books(){};
-    Books(String author,String title, int yearPublished){
+    Books(String author,String title, String yearPublished){
         this.author=author;
         this.title=title;
         this.yearPublished=yearPublished;
@@ -46,10 +46,10 @@ public class Books {
     public String getAuthor(){
         return this.author;
     }
-    public void setYear(int newYear){
+    public void setYear(String newYear){
         this.yearPublished=newYear;
     }
-    public int getYear(){
+    public String getYear(){
         return this.yearPublished;
     }
 
