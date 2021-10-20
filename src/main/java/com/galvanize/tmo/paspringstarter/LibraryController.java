@@ -44,9 +44,6 @@ public class LibraryController {
         Books newBooks(@RequestBody Books newBooks) {
         return repository.save(newBooks);
     }
-
-    
-
     
 } 
 

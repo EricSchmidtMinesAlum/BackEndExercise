@@ -18,13 +18,11 @@ import javax.persistence.Id;
 public class Books {
     //can't delete individual books, so no need to keep track of vacant ids
     private @Id @GeneratedValue Long id;
-
-
     private String author;
     private String title;
     private int yearPublished;
 
-
+    Books(){};
     Books(String givenAuthor,String givenTitle, int givenYearPublished){
         this.author=givenAuthor;
         this.title=givenTitle;
@@ -38,6 +36,20 @@ public class Books {
     public String getTitle(){
         return this.title;
     }
+    public void setAuthor(String newAuthor){
+        this.author=newAuthor;
+    }
+    public String getAuthor(){
+        return this.author;
+    }
+    public void setYear(int newYear){
+        this.yearPublished=newYear;
+    }
+    public int getYear(){
+        return this.yearPublished;
+    }
+
+
 
 
     @Override
