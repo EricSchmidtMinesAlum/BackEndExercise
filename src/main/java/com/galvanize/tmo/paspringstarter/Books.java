@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 //id
 //title
 //author
-//yearPublishedpublished
+//yearpublishedpublished
 
 @Entity
 public class Books {
@@ -22,14 +22,14 @@ public class Books {
     private @Id @GeneratedValue Long id;
     private String author;
     private String title;
-    @JsonProperty("yearPublished")
-    private Integer yearPublished;
+    //@JsonProperty("yearpublished")
+    private Integer yearpublished;
 
     Books(){};
-    Books(String author,String title, Integer yearPublished){
+    Books(String author,String title, Integer yearpublished){
         this.author=author;
         this.title=title;
-        this.yearPublished=yearPublished;
+        this.yearpublished=yearpublished;
     }
 
     //temp settters adn getters below
@@ -50,10 +50,10 @@ public class Books {
         return this.author;
     }
     public void setYear(Integer newYear){
-        this.yearPublished=newYear;
+        this.yearpublished=newYear;
     }
     public Integer getYear(){
-        return this.yearPublished;
+        return this.yearpublished;
     }
 
 
@@ -61,7 +61,7 @@ public class Books {
 
     @Override
     public String toString() {
-    return "{" + "id=" + this.id + ", author='" + this.author + ", title='" + this.title +", yearPublished='" + this.yearPublished +'}';
+    return "{" + "id=" + this.id + ", author='" + this.author + ", title='" + this.title +", yearpublished='" + this.yearpublished +'}';
     }
 
     @Override
@@ -73,11 +73,11 @@ public class Books {
         return false;
         Books employee = (Books) o;
       return Objects.equals(this.id, employee.id) && Objects.equals(this.author, employee.author)
-          && Objects.equals(this.title, employee.title)&& Objects.equals(this.yearPublished, employee.yearPublished);
+          && Objects.equals(this.title, employee.title)&& Objects.equals(this.yearpublished, employee.yearpublished);
     }
   
     @Override
     public int hashCode() {
-      return Objects.hash(this.id, this.author, this.title,this.yearPublished);
+      return Objects.hash(this.id, this.author, this.title,this.yearpublished);
     }
 }
