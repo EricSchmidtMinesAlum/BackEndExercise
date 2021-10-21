@@ -6,7 +6,9 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.http.HttpStatus;
 
 import java.util.List;
@@ -45,12 +47,18 @@ public class LibraryController {
         Books newBooks(@RequestBody Books newBooks) {
         return repository.save(newBooks);
     }
-
+/*
     @DeleteMapping("/api/books")
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
     void deletall() {
-    repository.deleteAll();
-  }
+        repository.deleteAll();
+    }*/
+
+    @RequestMapping(value = "/api/books", method = RequestMethod.DELETE)
+	@ResponseBody
+	public void deleteAll() {
+		repository.deleteAll();
+	}
     
 } 
 
