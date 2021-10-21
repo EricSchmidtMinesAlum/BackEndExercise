@@ -25,7 +25,7 @@ public class Books {
     //@JsonProperty("yearpublished")
     private Long yearpublished;
 
-    Books(){};
+    Books(){}
     Books(String author,String title, Long yearpublished){
         this.author=author;
         this.title=title;
