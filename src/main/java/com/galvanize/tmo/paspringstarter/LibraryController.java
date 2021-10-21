@@ -11,17 +11,23 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.http.HttpStatus;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+
+import com.fasterxml.jackson.databind.node.ObjectNode;
 
 
 //import Books.java;
 @RestController
 public class LibraryController {
-
     private final BooksRepository repository;
+    
 
     LibraryController(BooksRepository repository) {
     this.repository = repository;
+
+
     }
 
 
@@ -29,18 +35,27 @@ public class LibraryController {
     public void health() {
     
     }
-
+    /*
     @GetMapping("/api/books")
         List<Books> all() {
         return repository.findAll();
+        }*/
+
+    
+    @GetMapping("/api/books")
+        HashMap<String, List<Books>>  all() {            
+            //bookShelf.setBooks(repository.findAll());
+            //return bookShelf;
+
+            //ObjectNode objectNode = mapper.createObjectNode();
+
+           //objectNode.put("key", "value");
+            //return objectNode;
+            HashMap<String, List<Books>> map = new HashMap<>();
+            map.put("books", repository.findAll());
+            return map;
         }
-    /*
-    @RequestMapping(value="/api/books", method = RequestMethod.POST)
-    Books newBooks(@RequestBody Books newBooks) {
-        repository.save(newBooks);
-        return newBooks;
-    }
-    */
+
     
     @PostMapping(value="/api/books")
     @ResponseStatus(code = HttpStatus.CREATED)
@@ -51,15 +66,10 @@ public class LibraryController {
     @DeleteMapping("/api/books")
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
     void deletall() {
+        //bookShelf.clearBooks();
         repository.deleteAll();
         repository.flush();
     }
-/*
-    @RequestMapping(value = "/api/books", method = RequestMethod.DELETE)
-	@ResponseBody
-	public void deleteAll() {
-		repository.deleteAll();
-	}*/
     
 } 
 

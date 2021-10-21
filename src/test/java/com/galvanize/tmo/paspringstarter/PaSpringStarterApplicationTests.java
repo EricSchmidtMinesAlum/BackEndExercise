@@ -33,12 +33,31 @@ class PaSpringStarterApplicationTests {
 
 
 	//Test that the array is first empty
+	/*
 	@Test
 	public void getEmptyFirst() throws Exception {
 		mockMvc.perform(MockMvcRequestBuilders.get("/api/books").accept(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk())
+				.andExpect(content().string(equalTo("{books: []}")));
+	}
+	
+	//Test that the array is first empty
+	@Test
+	public void deleteNothing() throws Exception {
+		mockMvc.perform(MockMvcRequestBuilders.delete("/api/books").accept(MediaType.APPLICATION_JSON))
+				.andExpect(status().isNoContent())
+				.andExpect(content().string(equalTo("")));
+	}
+	@Test
+	public void getEmptyAgain() throws Exception {
+		mockMvc.perform(MockMvcRequestBuilders.get("/api/books").accept(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk())
 				.andExpect(content().string(equalTo("[]")));
 	}
+
+
+*/
+
 /*8
 	@Test
 	public void createEmployeeAPI() throws Exception 
