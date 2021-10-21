@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 //create class with:
 //id
 //title
@@ -20,6 +22,7 @@ public class Books {
     private @Id @GeneratedValue Long id;
     private String author;
     private String title;
+    @JsonProperty("yearPublished")
     private Integer yearPublished;
 
     Books(){};
