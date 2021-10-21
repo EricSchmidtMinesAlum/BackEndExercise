@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.http.HttpStatus;
 
+import java.util.Collections;
 import java.util.List;
 
 
@@ -32,6 +33,9 @@ public class LibraryController {
 
     @GetMapping("/api/books")
         List<Books> all() {
+            if(repository.findAll()==null){
+                return Collections.emptyList();
+            }
         return repository.findAll();
         }
     /*
