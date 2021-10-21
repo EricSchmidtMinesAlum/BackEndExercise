@@ -23,10 +23,10 @@ public class Books {
     private String author;
     private String title;
     //@JsonProperty("yearpublished")
-    private Integer yearpublished;
+    private Long yearpublished;
 
     Books(){};
-    Books(String author,String title, Integer yearpublished){
+    Books(String author,String title, Long yearpublished){
         this.author=author;
         this.title=title;
         this.yearpublished=yearpublished;
@@ -49,10 +49,10 @@ public class Books {
     public String getAuthor(){
         return this.author;
     }
-    public void setYear(Integer newYear){
+    public void setYear(Long newYear){
         this.yearpublished=newYear;
     }
-    public Integer getYear(){
+    public Long getYear(){
         return this.yearpublished;
     }
 
