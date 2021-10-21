@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.http.HttpStatus;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 
@@ -52,7 +54,14 @@ public class LibraryController {
            //objectNode.put("key", "value");
             //return objectNode;
             HashMap<String, List<Books>> map = new HashMap<>();
-            map.put("books", repository.findAll());
+
+            //create new list and set it to the repository. Then sort based on title
+            List<Books> sortedArray = new ArrayList<Books> ();
+            sortedArray = repository.findAll();
+            sortedArray.sort(Comparator.comparing(Books::getTitle));
+
+
+            map.put("books", sortedArray);
             return map;
         }
 

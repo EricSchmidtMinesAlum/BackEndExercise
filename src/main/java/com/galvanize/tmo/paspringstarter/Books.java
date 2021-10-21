@@ -63,6 +63,7 @@ public class Books {
     public String toString() {
     return "{" + "id=" + this.id + ", author='" + this.author + ", title='" + this.title +", yearPublished='" + this.yearPublished +'}';
     }
+ 
 
     @Override
     public boolean equals(Object o) {
@@ -81,5 +82,5 @@ public class Books {
       return Objects.hash(this.id, this.author, this.title,this.yearPublished);
     }
 
-    
+
 }
