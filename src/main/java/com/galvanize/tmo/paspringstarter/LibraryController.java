@@ -47,18 +47,19 @@ public class LibraryController {
         Books newBooks(@RequestBody Books newBooks) {
         return repository.save(newBooks);
     }
-/*
+
     @DeleteMapping("/api/books")
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
     void deletall() {
         repository.deleteAll();
-    }*/
-
+        repository.flush();
+    }
+/*
     @RequestMapping(value = "/api/books", method = RequestMethod.DELETE)
 	@ResponseBody
 	public void deleteAll() {
 		repository.deleteAll();
-	}
+	}*/
     
 } 
 
