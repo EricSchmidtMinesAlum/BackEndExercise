@@ -12,7 +12,7 @@ import javax.persistence.Id;
 //id
 //title
 //author
-//yearpublished
+//yearPublishedpublished
 
 @Entity
 public class Books {
@@ -20,13 +20,13 @@ public class Books {
     private @Id @GeneratedValue Long id;
     private String author;
     private String title;
-    private Integer year;
+    private Integer yearPublished;
 
     Books(){};
-    Books(String author,String title, Integer year){
+    Books(String author,String title, Integer yearPublished){
         this.author=author;
         this.title=title;
-        this.year=year;
+        this.yearPublished=yearPublished;
     }
 
     //temp settters adn getters below
@@ -47,10 +47,10 @@ public class Books {
         return this.author;
     }
     public void setYear(Integer newYear){
-        this.year=newYear;
+        this.yearPublished=newYear;
     }
     public Integer getYear(){
-        return this.year;
+        return this.yearPublished;
     }
 
 
@@ -58,7 +58,7 @@ public class Books {
 
     @Override
     public String toString() {
-    return "{" + "id=" + this.id + ", author='" + this.author + ", title='" + this.title +", yearPublished='" + this.year +'}';
+    return "{" + "id=" + this.id + ", author='" + this.author + ", title='" + this.title +", yearPublished='" + this.yearPublished +'}';
     }
 
     @Override
@@ -70,11 +70,11 @@ public class Books {
         return false;
         Books employee = (Books) o;
       return Objects.equals(this.id, employee.id) && Objects.equals(this.author, employee.author)
-          && Objects.equals(this.title, employee.title)&& Objects.equals(this.year, employee.year);
+          && Objects.equals(this.title, employee.title)&& Objects.equals(this.yearPublished, employee.yearPublished);
     }
   
     @Override
     public int hashCode() {
-      return Objects.hash(this.id, this.author, this.title,this.year);
+      return Objects.hash(this.id, this.author, this.title,this.yearPublished);
     }
 }
