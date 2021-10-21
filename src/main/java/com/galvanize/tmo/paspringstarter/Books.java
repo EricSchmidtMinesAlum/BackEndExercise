@@ -29,6 +29,7 @@ public class Books {
     Books(String author,String title, Integer yearPublished){
         this.author=author;
         this.title=title;
+        @JsonProperty("yearPublished")
         this.yearPublished=yearPublished;
     }
 
