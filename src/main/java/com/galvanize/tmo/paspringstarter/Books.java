@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 //id
 //title
 //author
-//yearpublishedpublished
+//yearPublishedpublished
 
 @Entity
 public class Books {
@@ -22,14 +22,14 @@ public class Books {
     private @Id @GeneratedValue Long id;
     private String author;
     private String title;
-    //@JsonProperty("yearpublished")
-    private Long yearpublished;
+    //@JsonProperty("yearPublished")
+    private Long yearPublished;
 
     Books(){}
-    Books(String author,String title, Long yearpublished){
+    Books(String author,String title, Long yearPublished){
         this.author=author;
         this.title=title;
-        this.yearpublished=yearpublished;
+        this.yearPublished=yearPublished;
     }
 
     //temp settters adn getters below
@@ -49,11 +49,11 @@ public class Books {
     public String getAuthor(){
         return this.author;
     }
-    public void setYear(Long newYear){
-        this.yearpublished=newYear;
+    public void setYearPublished(Long newYear){
+        this.yearPublished=newYear;
     }
-    public Long getYear(){
-        return this.yearpublished;
+    public Long getYearPublished(){
+        return this.yearPublished;
     }
 
 
@@ -61,7 +61,7 @@ public class Books {
 
     @Override
     public String toString() {
-    return "{" + "id=" + this.id + ", author='" + this.author + ", title='" + this.title +", yearpublished='" + this.yearpublished +'}';
+    return "{" + "id=" + this.id + ", author='" + this.author + ", title='" + this.title +", yearPublished='" + this.yearPublished +'}';
     }
 
     @Override
@@ -73,11 +73,11 @@ public class Books {
         return false;
         Books employee = (Books) o;
       return Objects.equals(this.id, employee.id) && Objects.equals(this.author, employee.author)
-          && Objects.equals(this.title, employee.title)&& Objects.equals(this.yearpublished, employee.yearpublished);
+          && Objects.equals(this.title, employee.title)&& Objects.equals(this.yearPublished, employee.yearPublished);
     }
   
     @Override
     public int hashCode() {
-      return Objects.hash(this.id, this.author, this.title,this.yearpublished);
+      return Objects.hash(this.id, this.author, this.title,this.yearPublished);
     }
 }
