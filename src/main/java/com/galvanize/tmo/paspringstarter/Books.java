@@ -20,13 +20,13 @@ public class Books {
     private @Id @GeneratedValue Long id;
     private String author;
     private String title;
-    private Integer yearublished;
+    private Integer year;
 
     Books(){};
-    Books(String author,String title, Integer yearublished){
+    Books(String author,String title, Integer year){
         this.author=author;
         this.title=title;
-        this.yearublished=yearublished;
+        this.year=year;
     }
 
     //temp settters adn getters below
@@ -47,10 +47,10 @@ public class Books {
         return this.author;
     }
     public void setYear(Integer newYear){
-        this.yearublished=newYear;
+        this.year=newYear;
     }
     public Integer getYear(){
-        return this.yearublished;
+        return this.year;
     }
 
 
@@ -58,7 +58,7 @@ public class Books {
 
     @Override
     public String toString() {
-    return "{" + "id=" + this.id + ", author='" + this.author + ", title='" + this.title +", yearPublished='" + this.yearublished +'}';
+    return "{" + "id=" + this.id + ", author='" + this.author + ", title='" + this.title +", yearPublished='" + this.year +'}';
     }
 
     @Override
@@ -70,11 +70,11 @@ public class Books {
         return false;
         Books employee = (Books) o;
       return Objects.equals(this.id, employee.id) && Objects.equals(this.author, employee.author)
-          && Objects.equals(this.title, employee.title)&& Objects.equals(this.yearublished, employee.yearublished);
+          && Objects.equals(this.title, employee.title)&& Objects.equals(this.year, employee.year);
     }
   
     @Override
     public int hashCode() {
-      return Objects.hash(this.id, this.author, this.title,this.yearublished);
+      return Objects.hash(this.id, this.author, this.title,this.year);
     }
 }
